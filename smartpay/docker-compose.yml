@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   blockchain-node:
     image: ethereum/client-go:stable
