@@ -1,21 +1,23 @@
 const express = require('express');
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsDoc = require('swagger-jsdoc');
+const cors = require('cors');
 const routes = require('./routes');
 const swaggerOptions = require('./config/swagger');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
+app.use(cors());
 app.use(express.json());
 app.use('/api', routes);
 
 app.listen(port, () => {
     console.log(`SmartPay API running on http://localhost:${port}`);
-    console.log('Swagger UI available at http://localhost:3000/api-docs');
+    console.log('Swagger UI available at http://localhost:3001/api-docs');
 });
 
 module.exports = app;
