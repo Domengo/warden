@@ -51,7 +51,7 @@ Use Docker Compose to start the local Ethereum blockchain. This is required to d
 
 ```bash
 docker-compose up -d
-
+```
 ## Deploy Smart Contracts
 
 Compile and deploy the smart contracts to the local blockchain network:
@@ -59,5 +59,5 @@ Compile and deploy the smart contracts to the local blockchain network:
 ```bash
 truffle compile
 truffle migrate --network development
-
+```
 
