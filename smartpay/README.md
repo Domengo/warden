@@ -39,3 +39,25 @@ Before setting up the project, ensure you have the following installed:
    ```bash
    git clone https://github.com/Domengo/warden.git
    cd warden/smartpay
+2. **Install dependencies**  
+   Install the required Node.js dependencies for the project:  
+   ```bash
+   npm install
+
+# Running the Application
+
+## Start Geth in Docker
+Use Docker Compose to start the local Ethereum blockchain. This is required to deploy and interact with the smart contracts:
+
+```bash
+docker-compose up -d
+
+## Deploy Smart Contracts
+
+Compile and deploy the smart contracts to the local blockchain network:
+
+```bash
+truffle compile
+truffle migrate --network development
+
+
