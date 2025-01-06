@@ -11,10 +11,14 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@openzeppelin/contracts": "^5.1.0",
+    "@truffle/contract": "^4.6.31",
     "express": "^4.21.2",
+    "node-fetch": "^3.3.2",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1",
     "truffle": "^5.11.5",
+    "truffle-contract": "^4.0.31",
     "web3": "^1.10.0"
   },
   "devDependencies": {

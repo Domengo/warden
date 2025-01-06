@@ -11,6 +11,12 @@ const port = process.env.PORT || 3001;
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
+// const corsOptions = {
+//     origin: ['http://172.28.251.205:3001', 'http://localhost:3001'], // Allow requests from this address
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed HTTP methods
+//     credentials: true, // Allow cookies or authentication headers
+// };
+
 app.use(cors());
 app.use(express.json());
 app.use('/api', routes);

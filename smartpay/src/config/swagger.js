@@ -12,11 +12,11 @@ const swaggerOptions = {
         },
         servers: [
             {
-                url: 'http://localhost:3001/api',
+                url: 'http://172.28.251.205:3001/api',
             },
         ],
     },
-    apis: ['./src/routes/*.js', './src/models/*.js'],
+    apis: ['./src/routes/*.js'],
 };
 
 module.exports = swaggerOptions;
