@@ -6,7 +6,7 @@ module.exports = {
         network_id: "*", // Match any network id
         gas: 8000000,      // Gas limit
       gasPrice: 20000000000 // 20 Gwei (optional)
-      }
+      },
       sepolia: {
         provider: () => new HDWalletProvider(
           process.env.PRIVATE_KEY,
