@@ -95,3 +95,27 @@ exports.getTransactionReceipt = async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 };
+
+exports.mintWithFiat = async (req, res) => {
+    const { to, fiatAmount } = req.body;
+    try {
+        const stableCoin = await StableCoin.deployed();
+        const accounts = await web3.eth.getAccounts();
+        await stableCoin.mintWithFiat(to, fiatAmount, { from: accounts[0] });
+        res.json({ message: 'Tokens minted successfully' });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+};
+
+exports.burnWithFiat = async (req, res) => {
+    const { tokenAmount } = req.body;
+    try {
+        const stableCoin = await StableCoin.deployed();
+        const accounts = await web3.eth.getAccounts();
+        await stableCoin.burnWithFiat(tokenAmount, { from: accounts[0] });
+        res.json({ message: 'Tokens burned successfully' });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+};

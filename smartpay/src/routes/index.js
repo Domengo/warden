@@ -152,4 +152,51 @@ router.post('/wallet/sendTransaction', walletController.sendTransaction);
  */
 router.get('/wallet/transactionReceipt', walletController.getTransactionReceipt);
 
+/**
+ * @swagger
+ * /wallet/mintWithFiat:
+ *   post:
+ *     summary: Mint tokens based on fiat amount
+ *     tags: [StableCoin]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               to:
+ *                 type: string
+ *                 description: Recipient address
+ *               fiatAmount:
+ *                 type: string
+ *                 description: Amount in fiat
+ *     responses:
+ *       200:
+ *         description: Tokens minted successfully
+ */
+router.post('/wallet/mintWithFiat', walletController.mintWithFiat);
+
+/**
+ * @swagger
+ * /wallet/burnWithFiat:
+ *   post:
+ *     summary: Burn tokens based on fiat amount
+ *     tags: [StableCoin]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               tokenAmount:
+ *                 type: string
+ *                 description: Amount of tokens to burn
+ *     responses:
+ *       200:
+ *         description: Tokens burned successfully
+ */
+router.post('/wallet/burnWithFiat', walletController.burnWithFiat);
+
 module.exports = router;
